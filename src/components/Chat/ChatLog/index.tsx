@@ -1,4 +1,7 @@
+import { useRecoilValue } from "recoil";
 import styled from "styled-components";
+import { IChat } from "../../../interfaces/IChat";
+import { chatState } from "../../../state/atom";
 import ChatMessage from "./ChatMessage";
 
 const StyledChatLog = styled.div`
@@ -31,9 +34,17 @@ const StyledChatLog = styled.div`
 `;
 
 function ChatLog() {
+  const chat = useRecoilValue<IChat[]>(chatState);
+
   return (
     <StyledChatLog>
-      <ChatMessage />
+      {chat.map((it) => (
+        <ChatMessage
+          key={it.id}
+          userName={it.userName}
+          userMessage={it.userMessage}
+        />
+      ))}
     </StyledChatLog>
   );
 }

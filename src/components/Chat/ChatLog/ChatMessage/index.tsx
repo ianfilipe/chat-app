@@ -1,5 +1,6 @@
 import { useRecoilState, useRecoilValue } from "recoil";
 import styled from "styled-components";
+import { IChat } from "../../../../interfaces/IChat";
 import { chatState } from "../../../../state/atom";
 
 const StyledChatMessage = styled.div`
@@ -15,14 +16,19 @@ const UserMessage = styled.span`
   color: var(--color-white);
 `;
 
-function ChatMessage() {
-  const chat = useRecoilValue(chatState);
+interface Props {
+  userName: string;
+  userMessage: string;
+}
+
+function ChatMessage({ userName, userMessage }: Props) {
+  const chat = useRecoilValue<IChat[]>(chatState);
 
   return (
     <StyledChatMessage>
-      <UserName>{chat[0].userName}</UserName>
+      <UserName>{userName}</UserName>
       <UserMessage>
-        <>: {chat[0].userMessage}</>
+        <>: {userMessage}</>
       </UserMessage>
     </StyledChatMessage>
   );

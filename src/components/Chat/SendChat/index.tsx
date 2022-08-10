@@ -15,6 +15,14 @@ function SendChat() {
   const [chat, setChat] = useRecoilState<IChat[]>(chatState);
   const [value, setValue] = useState("");
 
+  const sendChat = () => {
+    let newChat = [...chat].map((it) => {
+      return { ...it, userName: "teste", userMessage: value };
+    });
+    setChat(newChat);
+    setValue("");
+  };
+
   return (
     <StyledSendChat>
       <Input
@@ -24,10 +32,7 @@ function SendChat() {
       />
       <Button
         onClick={() => {
-          let newChat = [...chat].map((it) => {
-            return { ...it, userMessage: value };
-          });
-          setChat(newChat);
+          sendChat();
         }}
       >
         Chat
