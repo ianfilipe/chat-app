@@ -20,9 +20,9 @@ function ChatMessage() {
 
   return (
     <StyledChatMessage>
-      <UserName>{chat.userName}</UserName>
+      <UserName>{chat[0].userName}</UserName>
       <UserMessage>
-        <>: {chat.userMessage}</>
+        <>: {chat[0].userMessage}</>
       </UserMessage>
     </StyledChatMessage>
   );
