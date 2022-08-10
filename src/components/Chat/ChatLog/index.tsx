@@ -34,55 +34,6 @@ function ChatLog() {
   return (
     <StyledChatLog>
       <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
-      <ChatMessage />
     </StyledChatLog>
   );
 }

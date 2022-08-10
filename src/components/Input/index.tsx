@@ -10,10 +10,14 @@ const StyledInput = styled.input`
 
 interface Props {
   placeholder: string;
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-function Input({ placeholder }: Props) {
-  return <StyledInput placeholder={placeholder} />;
+function Input({ placeholder, value, onChange }: Props) {
+  return (
+    <StyledInput onChange={onChange} value={value} placeholder={placeholder} />
+  );
 }
 
 export default Input;

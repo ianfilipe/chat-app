@@ -13,10 +13,11 @@ const StyledButton = styled.button`
 
 interface Props {
   children: React.ReactNode;
+  onClick: () => void;
 }
 
-function Button({ children }: Props) {
-  return <StyledButton>{children}</StyledButton>;
+function Button({ children, onClick }: Props) {
+  return <StyledButton onClick={onClick}>{children}</StyledButton>;
 }
 
 export default Button;

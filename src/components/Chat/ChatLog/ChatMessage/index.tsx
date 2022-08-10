@@ -1,4 +1,6 @@
+import { useRecoilState, useRecoilValue } from "recoil";
 import styled from "styled-components";
+import { chatState } from "../../../../state/atom";
 
 const StyledChatMessage = styled.div`
   display: flex;
@@ -14,10 +16,14 @@ const UserMessage = styled.span`
 `;
 
 function ChatMessage() {
+  const chat = useRecoilValue(chatState);
+
   return (
     <StyledChatMessage>
-      <UserName>ianFss</UserName>
-      <UserMessage>: lorem ipsum dolor sit amet</UserMessage>
+      <UserName>{chat.userName}</UserName>
+      <UserMessage>
+        <>: {chat.userMessage}</>
+      </UserMessage>
     </StyledChatMessage>
   );
 }
