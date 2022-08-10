@@ -1,4 +1,5 @@
 import bodyParser from "body-parser";
+import cors from "cors";
 import express from "express";
 import WebSocket, { WebSocketServer } from "ws";
 import data from "./db.json" assert { type: "json" };
@@ -16,6 +17,7 @@ router.post("/message", (request, response) => {
   return response.send(body);
 });
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(router);
 
