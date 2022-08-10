@@ -1,7 +1,4 @@
-import { useRecoilState, useRecoilValue } from "recoil";
 import styled from "styled-components";
-import { IChat } from "../../../../interfaces/IChat";
-import { chatState } from "../../../../state/atom";
 
 const StyledChatMessage = styled.div`
   display: flex;
@@ -22,8 +19,6 @@ interface Props {
 }
 
 function ChatMessage({ userName, userMessage }: Props) {
-  const chat = useRecoilValue<IChat[]>(chatState);
-
   return (
     <StyledChatMessage>
       <UserName>{userName}</UserName>

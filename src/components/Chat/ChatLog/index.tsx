@@ -1,5 +1,6 @@
 import { useRecoilValue } from "recoil";
 import styled from "styled-components";
+import { ws } from "../../../api/ws";
 import { IChat } from "../../../interfaces/IChat";
 import { chatState } from "../../../state/atom";
 import ChatMessage from "./ChatMessage";
@@ -36,11 +37,21 @@ const StyledChatLog = styled.div`
 function ChatLog() {
   const chat = useRecoilValue<IChat[]>(chatState);
 
+  ws.onmessage = (msg) => {
+    if (msg.data instanceof Blob) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        console.log("receba!", JSON.parse(reader.result as string));
+      };
+      reader.readAsText(msg.data);
+    }
+  };
+
   return (
     <StyledChatLog>
-      {chat.map((it) => (
+      {chat.map((it, index) => (
         <ChatMessage
-          key={it.id}
+          key={index}
           userName={it.userName}
           userMessage={it.userMessage}
         />

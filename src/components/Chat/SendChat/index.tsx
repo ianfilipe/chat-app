@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import useWebSocket, { ReadyState } from "react-use-websocket";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
+import { w3cwebsocket as W3CWebSocket } from "websocket";
+import { ws } from "../../../api/ws";
 import { IChat } from "../../../interfaces/IChat";
 import { chatState } from "../../../state/atom";
+import { getId } from "../../../utils/getId";
 import Button from "../../Button";
 import Input from "../../Input";
 
@@ -12,14 +16,20 @@ const StyledSendChat = styled.div`
 `;
 
 function SendChat() {
-  const [chat, setChat] = useRecoilState<IChat[]>(chatState);
   const [value, setValue] = useState("");
+  const [chat, setChat] = useRecoilState<IChat[]>(chatState);
+
+  useEffect(() => {}, []);
 
   const sendChat = () => {
-    let newChat = [...chat].map((it) => {
-      return { ...it, userName: "teste", userMessage: value };
-    });
-    setChat(newChat);
+    let newChat = {
+      userName: "Teste",
+      userMessage: value,
+    };
+    if (newChat.userMessage) {
+      setChat([...chat, newChat]);
+      ws.send(JSON.stringify(newChat));
+    }
     setValue("");
   };
 
