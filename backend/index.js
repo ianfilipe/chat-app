@@ -1,27 +1,11 @@
 import bodyParser from "body-parser";
 import cors from "cors";
 import express from "express";
-import fs from "fs";
 import { WebSocketServer } from "ws";
-// import data from "./db.json" assert { type: "json" };
+import router from "./route/index.js";
+import messages from "./service/messages/index.js";
 
 const app = express();
-const router = express.Router();
-
-let data = fs.readFileSync("db.json");
-let json = JSON.parse(data);
-
-router.get("/messages", (request, response) => {
-  return response.status(200).send(data);
-});
-
-router.post("/message", async (request, response) => {
-  const body = await request.body;
-  json.messages.push(body);
-  fs.writeFileSync("db.json", JSON.stringify(json));
-  // fs.appendFileSync("db.json", JSON.stringify(body));
-  return response.send(body);
-});
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -36,7 +20,7 @@ let sockets = [];
 server.on("connection", (socket) => {
   sockets.push(socket);
   socket.on("message", (msg) => {
-    console.log(msg);
+    messages.saveMessage(msg);
     sockets.forEach((s) => s.send(msg));
   });
   socket.on("close", () => {
