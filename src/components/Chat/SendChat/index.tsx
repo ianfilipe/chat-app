@@ -22,19 +22,9 @@ function SendChat() {
       userMessage: value,
     };
     if (newChat.userMessage) {
-      setChat([...chat, newChat]);
+      // setChat([...chat, newChat]);
       ws.send(JSON.stringify(newChat));
-      // axios
-      //   .post("http://localhost:3000/message", {
-      //     userName: "Teste",
-      //     userMessage: value,
-      //   })
-      //   .then(() => {
-      //     console.log("foi!");
-      //   })
-      //   .catch((err) => console.log(err));
     }
-    // setValue("");
   };
 
   return (

@@ -1,4 +1,5 @@
-import { useRecoilValue } from "recoil";
+import { useEffect } from "react";
+import { useRecoilState, useRecoilValue } from "recoil";
 import styled from "styled-components";
 import { ws } from "../../../api/ws";
 import { IChat } from "../../../interfaces/IChat";
@@ -35,12 +36,13 @@ const StyledChatLog = styled.div`
 `;
 
 function ChatLog() {
-  const chat = useRecoilValue<IChat[]>(chatState);
+  const [chat, setChat] = useRecoilState<IChat[]>(chatState);
 
   ws.onmessage = (msg) => {
     if (msg.data instanceof Blob) {
       const reader = new FileReader();
       reader.onload = () => {
+        setChat([...chat, JSON.parse(reader.result as string)]);
         console.log("receba!", JSON.parse(reader.result as string));
       };
       reader.readAsText(msg.data);

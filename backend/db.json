@@ -1,14 +1,1 @@
-{
-  "id": 404,
-  "messages": [
-    { "userName": "ianFss", "userMessage": "lorem ipsum dolor sit amet" },
-    { "userName": "Mats", "userMessage": "lorem ipsum dolor sit amet" },
-    { "userName": "Postman", "userMessage": "Postman" },
-    { "userName": "Postman", "userMessage": "Postman" },
-    { "userName": "Postman", "userMessage": "Postman" },
-    { "userName": "Postman", "userMessage": "Postman" },
-    { "userName": "Postman", "userMessage": "Postman" },
-    { "userName": "Postman", "userMessage": "Postman" },
-    { "userName": "Postman", "userMessage": "Postman" }
-  ]
-}
+{ "id": 404, "messages": [] }
