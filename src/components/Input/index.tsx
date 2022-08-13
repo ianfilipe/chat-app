@@ -6,6 +6,9 @@ const StyledInput = styled.input`
   border-radius: 8px;
   color: var(--color-white);
   width: 100%;
+  ::placeholder {
+    color: var(--color-placeholder-input);
+  }
 `;
 
 interface Props {

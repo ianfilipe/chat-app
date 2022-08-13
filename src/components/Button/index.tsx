@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StyledButton = styled.button`
   background: var(--color-background-button);
   color: var(--color-black);
-  font-weight: 600;
+  font-weight: 500;
   padding: 16px;
   border-radius: 8px;
   &:hover {

@@ -2,7 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledContainer = styled.div`
-  padding: 48px;
+  display: flex;
+  /* padding: 48px; */
+  gap: 32px;
+  height: 100vh;
 `;
 
 interface Props {
