@@ -5,7 +5,7 @@ const StyledChatMessage = styled.div`
 `;
 
 const UserName = styled.span`
-  font-weight: 600;
+  font-weight: 500;
   color: #00db84;
 `;
 

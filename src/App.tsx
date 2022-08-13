@@ -1,6 +1,7 @@
 import { RecoilRoot } from "recoil";
 import { ws } from "./api/ws";
 import Chat from "./components/Chat";
+import ChatList from "./components/ChatList";
 
 function App() {
   ws.onopen = () => {
@@ -9,6 +10,7 @@ function App() {
 
   return (
     <RecoilRoot>
+      <ChatList />
       <Chat />
     </RecoilRoot>
   );

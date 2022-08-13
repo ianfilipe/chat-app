@@ -4,8 +4,10 @@ import SendChat from "./SendChat";
 
 const StyledChat = styled.div`
   display: flex;
+  flex: 1;
   flex-direction: column;
-  height: calc(100vh - 96px);
+  /* height: calc(100vh - 96px); */
+  padding: 48px;
 `;
 
 function Chat() {

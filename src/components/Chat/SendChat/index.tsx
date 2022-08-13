@@ -14,7 +14,6 @@ const StyledSendChat = styled.div`
 
 function SendChat() {
   const [value, setValue] = useState("");
-  const [chat, setChat] = useRecoilState<IChat[]>(chatState);
 
   const sendChat = () => {
     let newChat = {
@@ -22,7 +21,6 @@ function SendChat() {
       userMessage: value,
     };
     if (newChat.userMessage) {
-      // setChat([...chat, newChat]);
       ws.send(JSON.stringify(newChat));
     }
   };
