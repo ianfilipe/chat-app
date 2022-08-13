@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const StyledInput = styled.input`
   background: var(--color-background-input);
@@ -9,18 +9,18 @@ const StyledInput = styled.input`
   ::placeholder {
     color: var(--color-placeholder-input);
   }
-`;
+`
 
 interface Props {
-  placeholder: string;
-  value: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  placeholder: string
+  value: string
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 function Input({ placeholder, value, onChange }: Props) {
   return (
     <StyledInput onChange={onChange} value={value} placeholder={placeholder} />
-  );
+  )
 }
 
-export default Input;
+export default Input

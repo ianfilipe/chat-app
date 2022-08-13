@@ -1,7 +1,7 @@
-import { atom } from "recoil";
-import { getMessage } from "./selectors";
+import { atom } from 'recoil'
+import { getMessage } from './selectors'
 
 export const chatState = atom({
-  key: "chatState",
+  key: 'chatState',
   default: getMessage,
-});
+})

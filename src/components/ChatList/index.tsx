@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const StyledChatList = styled.div`
   width: 280px;
@@ -8,30 +8,30 @@ const StyledChatList = styled.div`
   gap: 8px;
   padding: 48px 24px;
   overflow-y: scroll;
-`;
+`
 
 interface Props {
-  active?: boolean;
+  active?: boolean
 }
 
 const ChatName = styled.div<Props>`
-  color: ${(props) =>
-    props.active ? "var(--color-white)" : "var(--color-text-sidebar)"};
-  font-weight: ${(props) => (props.active ? "500" : "inherit")};
-  background: ${(props) =>
-    props.active ? "var(--color-background-sidebar-active)" : "inherit"};
+  color: ${props =>
+    props.active ? 'var(--color-white)' : 'var(--color-text-sidebar)'};
+  font-weight: ${props => (props.active ? '500' : 'inherit')};
+  background: ${props =>
+    props.active ? 'var(--color-background-sidebar-active)' : 'inherit'};
   border-radius: 4px;
   padding: 8px;
   :hover {
-    color: ${(props) =>
-      props.active ? "inherit" : "var(--color-text-sidebar-hover)"};
-    background: ${(props) =>
+    color: ${props =>
+      props.active ? 'inherit' : 'var(--color-text-sidebar-hover)'};
+    background: ${props =>
       props.active
-        ? "var(--color-background-sidebar-active)"
-        : "var(--color-background-sidebar-hover)"};
+        ? 'var(--color-background-sidebar-active)'
+        : 'var(--color-background-sidebar-hover)'};
     cursor: pointer;
   }
-`;
+`
 
 function ChatList() {
   return (
@@ -39,7 +39,7 @@ function ChatList() {
       <ChatName active>Chat 1</ChatName>
       <ChatName>Chat 2</ChatName>
     </StyledChatList>
-  );
+  )
 }
 
-export default ChatList;
+export default ChatList

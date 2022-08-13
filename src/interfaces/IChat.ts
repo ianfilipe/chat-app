@@ -1,5 +1,5 @@
 export interface IChat {
-  id?: number;
-  userName: string;
-  userMessage: string;
+  id?: number
+  userName: string
+  userMessage: string
 }

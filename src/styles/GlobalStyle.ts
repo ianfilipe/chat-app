@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -57,4 +57,4 @@ export const GlobalStyle = createGlobalStyle`
     --color-background-sidebar-hover: #3B3D3B;
     --color-background-sidebar: #1E1F1E;
   }
-`;
+`

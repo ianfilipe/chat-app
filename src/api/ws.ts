@@ -1,5 +1,5 @@
-import { w3cwebsocket } from "websocket";
+import { w3cwebsocket } from 'websocket'
 
-const socketUrl = "ws://localhost:8080";
+const socketUrl = 'ws://localhost:8080'
 
-export const ws = new w3cwebsocket(socketUrl);
+export const ws = new w3cwebsocket(socketUrl)

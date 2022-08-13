@@ -1,10 +1,9 @@
-import { useEffect } from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
-import styled from "styled-components";
-import { ws } from "../../../api/ws";
-import { IChat } from "../../../interfaces/IChat";
-import { chatState } from "../../../state/atom";
-import ChatMessage from "./ChatMessage";
+import { useRecoilState } from 'recoil'
+import styled from 'styled-components'
+import { ws } from '../../../api/ws'
+import { IChat } from '../../../interfaces/IChat'
+import { chatState } from '../../../state/atom'
+import ChatMessage from './ChatMessage'
 
 const StyledChatLog = styled.div`
   display: flex;
@@ -13,21 +12,21 @@ const StyledChatLog = styled.div`
   flex: 1;
   margin-bottom: 16px;
   overflow-y: scroll;
-`;
+`
 
 function ChatLog() {
-  const [chat, setChat] = useRecoilState<IChat[]>(chatState);
+  const [chat, setChat] = useRecoilState<IChat[]>(chatState)
 
-  ws.onmessage = (msg) => {
+  ws.onmessage = msg => {
     if (msg.data instanceof Blob) {
-      const reader = new FileReader();
+      const reader = new FileReader()
       reader.onload = () => {
-        setChat([...chat, JSON.parse(reader.result as string)]);
-        console.log("receba!", JSON.parse(reader.result as string));
-      };
-      reader.readAsText(msg.data);
+        setChat([...chat, JSON.parse(reader.result as string)])
+        console.log('receba!', JSON.parse(reader.result as string))
+      }
+      reader.readAsText(msg.data)
     }
-  };
+  }
 
   return (
     <StyledChatLog>
@@ -39,7 +38,7 @@ function ChatLog() {
         />
       ))}
     </StyledChatLog>
-  );
+  )
 }
 
-export default ChatLog;
+export default ChatLog

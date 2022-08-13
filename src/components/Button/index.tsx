@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const StyledButton = styled.button`
   background: var(--color-background-button);
@@ -9,15 +9,15 @@ const StyledButton = styled.button`
   &:hover {
     cursor: pointer;
   }
-`;
+`
 
 interface Props {
-  children: React.ReactNode;
-  onClick: () => void;
+  children: React.ReactNode
+  onClick: () => void
 }
 
 function Button({ children, onClick }: Props) {
-  return <StyledButton onClick={onClick}>{children}</StyledButton>;
+  return <StyledButton onClick={onClick}>{children}</StyledButton>
 }
 
-export default Button;
+export default Button

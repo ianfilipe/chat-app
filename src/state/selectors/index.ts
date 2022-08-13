@@ -1,9 +1,9 @@
-import { selector } from "recoil";
-import api from "../../api/api";
+import { selector } from 'recoil'
+import api from '../../api/api'
 
 export const getMessage = selector({
-  key: "getMessage",
+  key: 'getMessage',
   get: async () => {
-    return await api.getMessage();
+    return await api.getMessage()
   },
-});
+})
