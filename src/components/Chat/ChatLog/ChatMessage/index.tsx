@@ -4,9 +4,15 @@ const StyledChatMessage = styled.div`
   display: flex;
 `
 
-const UserName = styled.span`
+interface UserNameProps {
+  color: string
+}
+
+// const randomColor = Math.floor(Math.random() * 16777215).toString(16)
+
+const UserName = styled.span<UserNameProps>`
   font-weight: 500;
-  color: #00db84;
+  color: #${props => props.color};
 `
 
 const UserMessage = styled.span`
@@ -21,7 +27,9 @@ interface Props {
 function ChatMessage({ userName, userMessage }: Props) {
   return (
     <StyledChatMessage>
-      <UserName>{userName}</UserName>
+      <UserName color={Math.floor(Math.random() * 16777215).toString(16)}>
+        {userName}
+      </UserName>
       <UserMessage>
         <>: {userMessage}</>
       </UserMessage>

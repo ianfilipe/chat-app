@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
     border: 0;
     outline: 0;
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
   }
 
     /* width */
@@ -33,28 +33,29 @@ export const GlobalStyle = createGlobalStyle`
   /* Handle */
   ::-webkit-scrollbar-thumb {
     border-radius: 9999px;
-    background: #888;
+    background: var(--color-background-input);
   }
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: var(--color-placeholder-input);
   }
 
   :root {
-    --color-white: #fff;
+    --color-white: #dfe3e6;
     --color-black: #000;
-    --color-background: #0F100F;
+
+    --color-background: #1d222c;
     /* button */
-    --color-background-button: #00DB84;
+    --color-background-button: rgb(73,141,242);
     /* input */
-    --color-background-input: #3C3E3D;
-    --color-placeholder-input: #777A77;
+    --color-background-input: #29303f;
+    --color-placeholder-input: #707a8c;
     /* sidebar */
-    --color-text-sidebar: #777A77;
-    --color-text-sidebar-hover: #B2B8B2;
-    --color-background-sidebar-active: #4F524F;
-    --color-background-sidebar-hover: #3B3D3B;
-    --color-background-sidebar: #1E1F1E;
+    --color-text-sidebar: #707a8c;
+    --color-text-sidebar-hover: #707a8c;
+    --color-background-sidebar-active: #29303f;
+    --color-background-sidebar-hover: #29303f;
+    --color-background-sidebar: #191d26;
   }
 `
