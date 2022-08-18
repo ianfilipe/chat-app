@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 class Api {
-  async getMessage() {
-    const response = await axios.get('http://localhost:3000/messages')
+  async getMessageById(id: any) {
+    const response = await axios.get(`http://localhost:3000/messages/${id}`)
     const messages = response.data.messages
     return messages
   }

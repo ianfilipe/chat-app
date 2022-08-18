@@ -1,9 +1,10 @@
 import { selector } from 'recoil'
 import api from '../../api/api'
+import { currentChatId } from '../atom'
 
-export const getMessage = selector({
-  key: 'getMessage',
-  get: async () => {
-    return await api.getMessage()
+export const getMessageById = selector({
+  key: 'getMessageById',
+  get: async ({ get }) => {
+    return await api.getMessageById(get(currentChatId))
   },
 })

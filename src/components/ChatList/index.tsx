@@ -1,4 +1,7 @@
+import { useRecoilState, useSetRecoilState } from 'recoil'
 import styled from 'styled-components'
+import { IChat } from '../../interfaces/IChat'
+import { chatState, currentChatId } from '../../state/atom'
 
 const StyledChatList = styled.div`
   width: 280px;
@@ -34,10 +37,18 @@ const ChatName = styled.div<Props>`
 `
 
 function ChatList() {
+  const setCurrentChatId = useSetRecoilState(currentChatId)
+
   return (
     <StyledChatList>
       <ChatName active>Chat 1</ChatName>
-      <ChatName>Chat 2</ChatName>
+      <ChatName
+        onClick={() => {
+          setCurrentChatId(405)
+        }}
+      >
+        Chat 2
+      </ChatName>
     </StyledChatList>
   )
 }
