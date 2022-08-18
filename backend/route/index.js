@@ -1,9 +1,9 @@
-import express from "express";
-import messages from "../controller/messages/index.js";
+import express from 'express'
+import messages from '../controller/messages/index.js'
 
-const router = express.Router();
+const router = express.Router()
 
-router.get("/messages", messages.getMessages);
+router.get('/messages/:id', messages.getMessagesById)
 
 // router.post("/message", async (request, response) => {
 //   const body = await request.body;
@@ -13,4 +13,4 @@ router.get("/messages", messages.getMessages);
 //   return response.send(body);
 // });
 
-export default router;
+export default router

@@ -1,1 +1,8 @@
-{"id":404,"messages":[{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"aaaaaaaaaaa"},{"userName":"Teste","userMessage":"Teste"}]}
+{
+  "404": {
+    "messages": [{ "userName": "Teste", "userMessage": "aaaaaaaaaaa" }]
+  },
+  "405": {
+    "messages": [{ "userName": "Teste", "userMessage": "bbbbbbbbbbb" }]
+  }
+}
