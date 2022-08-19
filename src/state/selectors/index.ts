@@ -8,3 +8,10 @@ export const getMessageById = selector({
     return await api.getMessageById(get(currentChatId))
   },
 })
+
+export const getChats = selector({
+  key: 'getChats',
+  get: async () => {
+    return await api.getChats()
+  },
+})
