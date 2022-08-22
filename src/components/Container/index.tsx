@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const StyledContainer = styled.div`
   display: flex;
   /* padding: 48px; */
-  gap: 32px;
+  /* gap: 32px; */
   height: 100vh;
 `
 

@@ -1,5 +1,7 @@
+import { useEffect } from 'react'
 import { useRecoilState, useSetRecoilState } from 'recoil'
 import styled from 'styled-components'
+import api from '../../api/api'
 import { IChat } from '../../interfaces/IChat'
 import { chatList, chatState, currentChatId } from '../../state/atom'
 
@@ -37,8 +39,17 @@ const ChatName = styled.div<Props>`
 `
 
 function ChatList() {
-  const setCurrentChatId = useSetRecoilState(currentChatId)
+  const setChat = useSetRecoilState(chatState)
+  const [CurrentChatId, setCurrentChatId] = useRecoilState(currentChatId)
   const chats = useRecoilState(chatList)
+
+  useEffect(() => {
+    async function fetchData() {
+      const messages = await api.getMessageById(CurrentChatId)
+      setChat(messages)
+    }
+    fetchData()
+  }, [CurrentChatId])
 
   return (
     <StyledChatList>
