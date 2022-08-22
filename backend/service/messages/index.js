@@ -2,9 +2,11 @@ import fs from 'fs'
 
 class Messages {
   saveMessage(msg) {
+    const id = JSON.parse(msg).chatId
     let data = fs.readFileSync('db.json')
     let json = JSON.parse(data)
-    json.messages.push(JSON.parse(msg.toString()))
+    // console.log(json[id])
+    json[id].messages.push(JSON.parse(msg.toString()))
     fs.writeFileSync('db.json', JSON.stringify(json))
   }
 }
