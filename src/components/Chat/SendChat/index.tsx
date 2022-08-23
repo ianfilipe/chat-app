@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { useRecoilState } from 'recoil'
 import styled from 'styled-components'
 import { ws } from '../../../api/ws'
+import { currentChatId } from '../../../state/atom'
 import Button from '../../Button'
 import Input from '../../Input'
 const StyledSendChat = styled.div`
@@ -10,14 +12,20 @@ const StyledSendChat = styled.div`
 
 function SendChat() {
   const [value, setValue] = useState('')
+  const currentChat = useRecoilState(currentChatId)
 
   const sendChat = () => {
-    const newChat = {
-      userName: 'Teste',
-      userMessage: value,
-    }
-    if (newChat.userMessage) {
-      ws.send(JSON.stringify(newChat))
+    try {
+      const newChat = {
+        chatId: currentChat.at(0),
+        userName: 'Teste',
+        userMessage: value,
+      }
+      if (newChat.userMessage) {
+        ws.send(JSON.stringify(newChat))
+      }
+    } catch (error) {
+      console.log(error)
     }
   }
 
